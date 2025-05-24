@@ -15,10 +15,10 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 
 from homework.src._internals.prepare_data import prepare_data
+from homework.src._internals.calculate_metrics import calculate_metrics
+from homework.src._internals.print_metrics import print_metrics
+from homework.src._internals.save_model_if_better import save_model_if_better
 
-from .src._internals.calculate_metrics import calculate_metrics
-from .src._internals.print_metrics import print_metrics
-from .src._internals.save_model import save_model_if_better
 
 # descarga de datos
 url = "http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv"
@@ -50,6 +50,6 @@ print_metrics("Training metrcis",mse, mae, r2)
 
 mse, mae, r2 = calculate_metrics(estimator, x_train, y_train,)
 
-print_metrics("Training metrcis",mse, mae, r2)
+print_metrics("Training metrics",mse, mae, r2)
 
 save_model_if_better(estimator, x_test, y_test)

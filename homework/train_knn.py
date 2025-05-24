@@ -11,9 +11,8 @@ from sklearn.neighbors import KNeighborsRegressor
 
 from homework.src._internals.prepare_data import prepare_data
 from homework.src._internals.print_metrics import print_metrics
-
-from .src._internals.calculate_metrics import calculate_metrics
-from .src._internals.save_model import save_model_if_better
+from homework.src._internals.calculate_metrics import calculate_metrics
+from homework.src._internals.save_model_if_better import save_model_if_better
 
 x_train, x_test, y_train, y_test = prepare_data(
     file_path="data/winequality-red.csv",
